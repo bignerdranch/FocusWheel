@@ -26,12 +26,12 @@ class CollectionViewWheelLayout: UICollectionViewLayout {
                 let radiansSoFar = CGFloat((i * 360/itemCount)).degreesToRadians
                 let endAngle = radiansSoFar + (360.0/cgItemCount - self.itemSpacingDegrees).degreesToRadians
                 let theta = (endAngle - radiansSoFar)
-                let r = (R * sin(theta/2.0)) / (sin(theta/2.0) + 1)  // radius of smaller circle in cell
-                let OC = R - r // distance from center of big circle to center of cell
-                let r_x = cos(radiansSoFar + theta / 2.0) * OC
-                let r_y = sin(radiansSoFar + theta / 2.0) * OC
-                let topLeft = CGPoint(x: r_x - r + O.x, y: r_y - r + O.y)
-                let cellFrame = CGRect(origin: topLeft, size: CGSize(width: 2*r, height: 2*r))
+                let r = (R * sin(theta/2.0)) / (sin(theta/2.0) + 1)
+                let OC = R - r 
+                let x = cos(radiansSoFar + theta / 2.0) * OC - r + O.x
+                let y = sin(radiansSoFar + theta / 2.0) * OC - r + O.y
+                let frameOrigin = CGPoint(x: x, y: y)
+                let cellFrame = CGRect(origin: frameOrigin, size: CGSize(width: 2*r, height: 2*r))
                 
                 let indexPath = IndexPath(item: i, section: section)
                 let layoutAttributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)

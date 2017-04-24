@@ -17,14 +17,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         collectionView.register(CollectionViewWheelCell.self, forCellWithReuseIdentifier: "WheelCell")
         collectionView.dataSource = self
-        //collectionView.delegate = self
-        restoresFocusAfterTransition = true
-        collectionView.allowsMultipleSelection = false
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
