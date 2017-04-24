@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		019E75751EAD927500E80841 /* CollectionViewWheelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E75741EAD927500E80841 /* CollectionViewWheelCell.swift */; };
 		01C2FD801EAD800A00DE0006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2FD7F1EAD800A00DE0006 /* AppDelegate.swift */; };
 		01C2FD821EAD800A00DE0006 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2FD811EAD800A00DE0006 /* ViewController.swift */; };
 		01C2FD851EAD800A00DE0006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C2FD831EAD800A00DE0006 /* Main.storyboard */; };
 		01C2FD871EAD800A00DE0006 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C2FD861EAD800A00DE0006 /* Assets.xcassets */; };
+		01C2FD8F1EAD81B500DE0006 /* CollectionViewWheelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2FD8E1EAD81B500DE0006 /* CollectionViewWheelLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		019E75741EAD927500E80841 /* CollectionViewWheelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWheelCell.swift; sourceTree = "<group>"; };
 		01C2FD7C1EAD800A00DE0006 /* FocusWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C2FD7F1EAD800A00DE0006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C2FD811EAD800A00DE0006 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01C2FD841EAD800A00DE0006 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01C2FD861EAD800A00DE0006 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01C2FD881EAD800A00DE0006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01C2FD8E1EAD81B500DE0006 /* CollectionViewWheelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWheelLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +56,10 @@
 		01C2FD7E1EAD800A00DE0006 /* FocusWheel */ = {
 			isa = PBXGroup;
 			children = (
+				01C2FD8E1EAD81B500DE0006 /* CollectionViewWheelLayout.swift */,
 				01C2FD7F1EAD800A00DE0006 /* AppDelegate.swift */,
 				01C2FD811EAD800A00DE0006 /* ViewController.swift */,
+				019E75741EAD927500E80841 /* CollectionViewWheelCell.swift */,
 				01C2FD831EAD800A00DE0006 /* Main.storyboard */,
 				01C2FD861EAD800A00DE0006 /* Assets.xcassets */,
 				01C2FD881EAD800A00DE0006 /* Info.plist */,
@@ -133,6 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019E75751EAD927500E80841 /* CollectionViewWheelCell.swift in Sources */,
+				01C2FD8F1EAD81B500DE0006 /* CollectionViewWheelLayout.swift in Sources */,
 				01C2FD821EAD800A00DE0006 /* ViewController.swift in Sources */,
 				01C2FD801EAD800A00DE0006 /* AppDelegate.swift in Sources */,
 			);
@@ -292,6 +300,7 @@
 				01C2FD8D1EAD800A00DE0006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

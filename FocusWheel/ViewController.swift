@@ -9,17 +9,36 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let images = [#imageLiteral(resourceName: "ios"), #imageLiteral(resourceName: "ux"), #imageLiteral(resourceName: "android"), #imageLiteral(resourceName: "mac"), #imageLiteral(resourceName: "frontend"), #imageLiteral(resourceName: "backend")]
+    @IBOutlet var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        collectionView.register(CollectionViewWheelCell.self, forCellWithReuseIdentifier: "WheelCell")
+        collectionView.dataSource = self
+        //collectionView.delegate = self
+        restoresFocusAfterTransition = true
+        collectionView.allowsMultipleSelection = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
+extension ViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WheelCell", for: indexPath) as! CollectionViewWheelCell
+        let image = images[indexPath.row]
+        let imageView = UIImageView(image: image)
+        cell.cellImage = imageView
+        return cell
+    }
+}
