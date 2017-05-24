@@ -25,11 +25,11 @@ class CollectionViewWheelLayout: UICollectionViewLayout {
                 let R = bounds.width / 2.0
                 let radiansSoFar = CGFloat((i * 360/itemCount)).degreesToRadians
                 let endAngle = radiansSoFar + (360.0/cgItemCount - self.itemSpacingDegrees).degreesToRadians
-                let theta = (endAngle - radiansSoFar)
-                let r = (R * sin(theta/2.0)) / (sin(theta/2.0) + 1)
+                let θ = (endAngle - radiansSoFar)
+                let r = (R * sin(θ/2.0)) / (sin(θ/2.0) + 1)
                 let OC = R - r 
-                let x = cos(radiansSoFar + theta / 2.0) * OC - r + O.x
-                let y = sin(radiansSoFar + theta / 2.0) * OC - r + O.y
+                let x = cos(radiansSoFar + θ / 2.0) * OC - r + O.x
+                let y = sin(radiansSoFar + θ / 2.0) * OC - r + O.y
                 let frameOrigin = CGPoint(x: x, y: y)
                 let cellFrame = CGRect(origin: frameOrigin, size: CGSize(width: 2*r, height: 2*r))
                 

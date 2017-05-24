@@ -25,14 +25,14 @@ class CollectionViewWheelCell: UICollectionViewCell {
         guard let cellImage = cellImage else {
             return
         }
-        cellImage.translatesAutoresizingMaskIntoConstraints = false
         cellImage.frame = contentView.bounds
         contentView.addSubview(cellImage)
         
-        NSLayoutConstraint(item: cellImage, attribute: .width, relatedBy: .lessThanOrEqual, toItem: self, attribute: .width, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: cellImage, attribute: .height, relatedBy: .lessThanOrEqual, toItem: self, attribute: .height, multiplier: 1.0, constant: 0).isActive = true
-        NSLayoutConstraint(item: cellImage, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
-        NSLayoutConstraint(item: cellImage, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0.0).isActive = true
+        cellImage.translatesAutoresizingMaskIntoConstraints = false
+        cellImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        cellImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        cellImage.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
+        cellImage.heightAnchor.constraint(equalTo: heightAnchor).isActive = true
         
         cellImage.adjustsImageWhenAncestorFocused = true
     }

@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         collectionView.register(CollectionViewWheelCell.self, forCellWithReuseIdentifier: "WheelCell")
         collectionView.dataSource = self
+        collectionView.clipsToBounds = false
     }
 }
 
