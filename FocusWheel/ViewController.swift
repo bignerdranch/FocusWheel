@@ -11,13 +11,18 @@ import UIKit
 class ViewController: UIViewController {
     
     let images = [#imageLiteral(resourceName: "ios"), #imageLiteral(resourceName: "ux"), #imageLiteral(resourceName: "android"), #imageLiteral(resourceName: "mac"), #imageLiteral(resourceName: "frontend"), #imageLiteral(resourceName: "backend")]
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var collectionView: WheelCollectionView!
+    var scrollingAround = true
+    var hasFocus = true
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(CollectionViewWheelCell.self, forCellWithReuseIdentifier: "WheelCell")
         collectionView.dataSource = self
         collectionView.clipsToBounds = false
+        collectionView.delegate = self
+        collectionView.remembersLastFocusedIndexPath = true
     }
 }
 
@@ -32,6 +37,50 @@ extension ViewController: UICollectionViewDataSource {
         let image = images[indexPath.row]
         let imageView = UIImageView(image: image)
         cell.cellImage = imageView
+        
         return cell
+    }
+
+}
+
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pushSplitViewController(for: indexPath)
+        scrollingAround = false
+        setNeedsFocusUpdate()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
+        return scrollingAround || !hasFocus
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        hasFocus = context.nextFocusedIndexPath != nil
+        scrollingAround = context.nextFocusedIndexPath != nil
+    }
+    
+    private func pushSplitViewController(for indexPath: IndexPath) {
+        guard let placeholderViewController = storyboard?.instantiateViewController(withIdentifier: "PlaceholderViewController") as? PlaceholderViewController, let splitViewController = splitViewController  else {
+            return
+        }
+        let color: UIColor
+        switch (indexPath.row) {
+        case 0:
+            color = UIColor(colorLiteralRed: 33/255, green: 173/255, blue: 251/255, alpha: 0.6)
+        case 1:
+            color = UIColor.purple.withAlphaComponent(0.6)
+        case 2:
+            color = UIColor(colorLiteralRed: 118/255, green: 199/255, blue: 44/255, alpha: 0.6)
+        case 3:
+            color = UIColor.white.withAlphaComponent(0.6)
+        case 4:
+            color = UIColor.red.withAlphaComponent(0.6)
+        case 5:
+            color = UIColor.orange.withAlphaComponent(0.6)
+        default:
+            color = UIColor.black
+        }
+        placeholderViewController.cellColor = color
+        splitViewController.showDetailViewController(placeholderViewController, sender: self)
     }
 }

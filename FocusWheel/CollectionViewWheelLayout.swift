@@ -11,6 +11,9 @@ import UIKit
 class CollectionViewWheelLayout: UICollectionViewLayout {
 
     var itemSpacingDegrees: CGFloat = 3.0
+    var itemAttributesCache = [UICollectionViewLayoutAttributes]()
+
+
     
     lazy var configureLayout: Void = {
         guard self.itemAttributesCache.isEmpty, let collectionView = self.collectionView else { return }
@@ -41,7 +44,6 @@ class CollectionViewWheelLayout: UICollectionViewLayout {
         }
     }()
 
-    var itemAttributesCache = [UICollectionViewLayoutAttributes]()
     
     override var collectionViewContentSize: CGSize {
         guard let collectionView = collectionView else {
