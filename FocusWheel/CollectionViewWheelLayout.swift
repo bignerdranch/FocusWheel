@@ -11,8 +11,17 @@ import UIKit
 class CollectionViewWheelLayout: UICollectionViewLayout {
 
     var itemSpacingDegrees: CGFloat = 3.0
+
+    var itemAttributesCache = [UICollectionViewLayoutAttributes]()
     
-    lazy var configureLayout: Void = {
+    override var collectionViewContentSize: CGSize {
+        guard let collectionView = collectionView else {
+            preconditionFailure("Requested content size for CollectionViewDialLayout with associated Collection View")
+        }
+        return collectionView.frame.size
+    }
+    
+    override func prepare() {
         guard self.itemAttributesCache.isEmpty, let collectionView = self.collectionView else { return }
         for section in 0..<collectionView.numberOfSections {
             let itemCount = collectionView.numberOfItems(inSection: section)
@@ -27,7 +36,7 @@ class CollectionViewWheelLayout: UICollectionViewLayout {
                 let endAngle = radiansSoFar + (360.0/cgItemCount - self.itemSpacingDegrees).degreesToRadians
                 let θ = (endAngle - radiansSoFar)
                 let r = (R * sin(θ/2.0)) / (sin(θ/2.0) + 1)
-                let OC = R - r 
+                let OC = R - r
                 let x = cos(radiansSoFar + θ / 2.0) * OC - r + O.x
                 let y = sin(radiansSoFar + θ / 2.0) * OC - r + O.y
                 let frameOrigin = CGPoint(x: x, y: y)
@@ -39,19 +48,6 @@ class CollectionViewWheelLayout: UICollectionViewLayout {
                 self.itemAttributesCache.append(layoutAttributes)
             }
         }
-    }()
-
-    var itemAttributesCache = [UICollectionViewLayoutAttributes]()
-    
-    override var collectionViewContentSize: CGSize {
-        guard let collectionView = collectionView else {
-            preconditionFailure("Requested content size for CollectionViewDialLayout with associated Collection View")
-        }
-        return collectionView.frame.size
-    }
-    
-    override func prepare() {
-        _ = configureLayout
     }
     
     override func invalidateLayout() {
