@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.clipsToBounds = false
         collectionView.delegate = self
-        //collectionView.remembersLastFocusedIndexPath = true
+        collectionView.remembersLastFocusedIndexPath = true
     }
 }
 
