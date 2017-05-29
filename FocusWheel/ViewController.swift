@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     
     let images = [#imageLiteral(resourceName: "ios"), #imageLiteral(resourceName: "ux"), #imageLiteral(resourceName: "android"), #imageLiteral(resourceName: "mac"), #imageLiteral(resourceName: "frontend"), #imageLiteral(resourceName: "backend")]
     @IBOutlet var collectionView: WheelCollectionView!
-    var scrollingAround = true
-    var hasFocus = true
+    var scrollingAround = false
+    var hasFocus = false
 
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.clipsToBounds = false
         collectionView.delegate = self
-        collectionView.remembersLastFocusedIndexPath = true
+        //collectionView.remembersLastFocusedIndexPath = true
     }
 }
 
@@ -60,7 +60,7 @@ extension ViewController: UICollectionViewDelegate {
     }
     
     private func pushSplitViewController(for indexPath: IndexPath) {
-        guard let placeholderViewController = storyboard?.instantiateViewController(withIdentifier: "PlaceholderViewController") as? PlaceholderViewController, let splitViewController = splitViewController  else {
+        guard let placeholderViewController = storyboard?.instantiateViewController(withIdentifier: "ColorViewController") as? ColorViewController, let splitViewController = splitViewController  else {
             return
         }
         let color: UIColor

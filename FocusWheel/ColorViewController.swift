@@ -8,11 +8,11 @@
 
 import UIKit
 
-class PlaceholderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class ColorViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     @IBOutlet var tableView: UITableView!
     var cellColor: UIColor = UIColor.clear
-    var browsing = true
+    var browsing = false
     var hasFocus = false
     
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class PlaceholderViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     func menuOut(sender: UITapGestureRecognizer) {
-        browsing = false
-        setNeedsFocusUpdate()
+        browsing = false        
+        setNeedsFocusUpdate()        
     }
 }

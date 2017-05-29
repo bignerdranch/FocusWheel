@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		01711C581ED6187A0066EB60 /* WheelCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01711C571ED6187A0066EB60 /* WheelCollectionView.swift */; };
 		019E75751EAD927500E80841 /* CollectionViewWheelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E75741EAD927500E80841 /* CollectionViewWheelCell.swift */; };
-		01A2BE351ED7497F00854E82 /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2BE341ED7497F00854E82 /* PlaceholderViewController.swift */; };
+		01A2BE351ED7497F00854E82 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2BE341ED7497F00854E82 /* ColorViewController.swift */; };
 		01C2FD801EAD800A00DE0006 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2FD7F1EAD800A00DE0006 /* AppDelegate.swift */; };
 		01C2FD821EAD800A00DE0006 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C2FD811EAD800A00DE0006 /* ViewController.swift */; };
 		01C2FD851EAD800A00DE0006 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C2FD831EAD800A00DE0006 /* Main.storyboard */; };
@@ -20,7 +20,7 @@
 /* Begin PBXFileReference section */
 		01711C571ED6187A0066EB60 /* WheelCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WheelCollectionView.swift; sourceTree = "<group>"; };
 		019E75741EAD927500E80841 /* CollectionViewWheelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWheelCell.swift; sourceTree = "<group>"; };
-		01A2BE341ED7497F00854E82 /* PlaceholderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderViewController.swift; sourceTree = "<group>"; };
+		01A2BE341ED7497F00854E82 /* ColorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		01C2FD7C1EAD800A00DE0006 /* FocusWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C2FD7F1EAD800A00DE0006 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C2FD811EAD800A00DE0006 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 				01C2FD7F1EAD800A00DE0006 /* AppDelegate.swift */,
 				01C2FD811EAD800A00DE0006 /* ViewController.swift */,
 				019E75741EAD927500E80841 /* CollectionViewWheelCell.swift */,
-				01A2BE341ED7497F00854E82 /* PlaceholderViewController.swift */,
+				01A2BE341ED7497F00854E82 /* ColorViewController.swift */,
 				01C2FD831EAD800A00DE0006 /* Main.storyboard */,
 				01C2FD861EAD800A00DE0006 /* Assets.xcassets */,
 				01C2FD881EAD800A00DE0006 /* Info.plist */,
@@ -149,7 +149,7 @@
 				01C2FD8F1EAD81B500DE0006 /* CollectionViewWheelLayout.swift in Sources */,
 				01C2FD821EAD800A00DE0006 /* ViewController.swift in Sources */,
 				01C2FD801EAD800A00DE0006 /* AppDelegate.swift in Sources */,
-				01A2BE351ED7497F00854E82 /* PlaceholderViewController.swift in Sources */,
+				01A2BE351ED7497F00854E82 /* ColorViewController.swift in Sources */,
 				01711C581ED6187A0066EB60 /* WheelCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

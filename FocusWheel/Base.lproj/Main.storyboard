@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="1739" y="-151"/>
         </scene>
-        <!--PlaceholderViewController-->
+        <!--Color View Controller-->
         <scene sceneID="MCW-ew-HWQ">
             <objects>
-                <viewController storyboardIdentifier="PlaceholderViewController" title="PlaceholderViewController" id="kiN-sN-m4h" customClass="PlaceholderViewController" customModule="FocusWheel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorViewController" id="kiN-sN-m4h" customClass="ColorViewController" customModule="FocusWheel" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dDi-xw-sbW"/>
                         <viewControllerLayoutGuide type="bottom" id="2D5-Ew-mSY"/>
